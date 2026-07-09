@@ -2,7 +2,7 @@
 CodeAlpha Internship - Task 1: Credit Scoring Model
 Author: Adarsh Srivastava 
 Description: Predict creditworthiness using Logistic Regression, Decision Tree, and Random Forest.
-Dataset: Simulated financial dataset (replace with real dataset like German Credit / Kaggle Credit Risk)
+Dataset: Simulated financial dataset
 """
 
 import numpy as np
@@ -23,9 +23,9 @@ from sklearn.metrics import (
 import warnings
 warnings.filterwarnings("ignore")
 
-# ──────────────────────────────────────────────
+#───────────────────────────────────
 # 1. GENERATE / LOAD DATASET
-# ──────────────────────────────────────────────
+#───────────────────────────────────
 def generate_dataset(n=1000, seed=42):
     """Generate a synthetic credit dataset. Replace this with real data loading."""
     np.random.seed(seed)
@@ -54,9 +54,11 @@ def generate_dataset(n=1000, seed=42):
     return df
 
 
-# ──────────────────────────────────────────────
+
+
+#───────────────────────────────────
 # 2. EXPLORATORY DATA ANALYSIS
-# ──────────────────────────────────────────────
+#───────────────────────────────────
 def exploratory_analysis(df):
     print("=" * 55)
     print("  CREDIT SCORING MODEL — Exploratory Data Analysis")
@@ -87,9 +89,11 @@ def exploratory_analysis(df):
     print("EDA plots saved → eda_plots.png\n")
 
 
-# ──────────────────────────────────────────────
+
+
+#───────────────────────────────────
 # 3. PREPROCESSING
-# ──────────────────────────────────────────────
+#───────────────────────────────────
 def preprocess(df):
     X = df.drop("creditworthy", axis=1)
     y = df["creditworthy"]
@@ -102,9 +106,11 @@ def preprocess(df):
     return X_train_sc, X_test_sc, y_train, y_test, X.columns.tolist(), scaler
 
 
-# ──────────────────────────────────────────────
+
+
+#───────────────────────────────────
 # 4. TRAIN & EVALUATE MODELS
-# ──────────────────────────────────────────────
+#───────────────────────────────────
 def evaluate_model(name, model, X_train, X_test, y_train, y_test):
     model.fit(X_train, y_train)
     y_pred  = model.predict(X_test)
@@ -165,9 +171,11 @@ def plot_results(results, y_test, feature_names):
     print("Model comparison saved → model_comparison.png\n")
 
 
-# ──────────────────────────────────────────────
+
+
+#───────────────────────────────────
 # 5. MAIN
-# ──────────────────────────────────────────────
+#───────────────────────────────────
 def main():
     # Load / generate data
     df = generate_dataset(n=2000)
