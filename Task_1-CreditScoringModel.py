@@ -2,7 +2,7 @@
 CodeAlpha Internship - Task 1: Credit Scoring Model
 Author: Adarsh Srivastava 
 Description: Predict creditworthiness using Logistic Regression, Decision Tree, and Random Forest.
-Dataset: Simulated financial dataset
+Dataset: Simulated financial dataset (We can also use Datasets like Kaggle Credit Risk)
 """
 
 import numpy as np
@@ -22,6 +22,8 @@ from sklearn.metrics import (
 
 import warnings
 warnings.filterwarnings("ignore")
+
+
 
 #───────────────────────────────────
 # 1. GENERATE / LOAD DATASET
